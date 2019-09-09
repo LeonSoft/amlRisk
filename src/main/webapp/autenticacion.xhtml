@@ -6,22 +6,24 @@
       xmlns:p="http://primefaces.org/ui">
 
     <body>
-
+<h:outputStylesheet name="css/styles.css" />
         <ui:composition template="./plantillas/plantillaSinMenu.xhtml">
 
-            <ui:define name="content">                
+            <ui:define name="content" id="content">                
                 <p:messages id="messages" showDetail="false" autoUpdate="true" />
                 <h:form id="frmAutenticacion">                                           
-                    <p:panel header="#{msj.tituloAutenticacion}" id="pnlAutenticacion" style="margin-bottom:20px">
+                    <p:panel id="pnlAutenticacion">
                         <h:panelGrid id="pnlgAutenticacion" columns="2" >
-                            <p:outputLabel for="nombreUsuerio" value="#{msj.usuario}"  />
-                            <p:inputText id="nombreUsuerio" required="true"  value="#{autenticacionController.usuario.usuario}" tabindex="1"/>
+                            <!-- <p:outputLabel for="nombreUsuerio" value="#{msj.usuario}"  /> -->
+                            <p:inputText id="nombreUsuerio" required="true"  value="#{autenticacionController.usuario.usuario}" tabindex="1" placeholder="#{msj.usuario}"/>
 
-                            <p:outputLabel for="claveUsuario" value="#{msj.clave}" />
-                            <p:password id="claveUsuario"  required="true" value="#{autenticacionController.usuario.claveUsuario}" tabindex="2"/>                                                 
+                            <!-- <p:outputLabel for="claveUsuario" value="#{msj.clave}" /> -->
+                            <p:password id="claveUsuario"  required="true" value="#{autenticacionController.usuario.claveUsuario}" tabindex="2"  placeholder="#{msj.clave}"/>                                                 
+
+
 
                             <h:column/>    
-                            <p:commandButton value="#{msj.ingresar}" action="#{autenticacionController.iniciaSesion()}" tabindex="3" update="frmAutenticacion" />
+                            <p:commandButton styleClass="ui-priority-primary" value="#{msj.ingresar}" action="#{autenticacionController.iniciaSesion()}" tabindex="3" update="frmAutenticacion" />
                         </h:panelGrid>
                         <p:separator/>
                         <p:commandLink id="recordarClave" tabindex="4" value="#{msj.recordarClave}" action="gestionUsuario/recordarClave.xhtml" process="@this" />                                
