@@ -17,7 +17,11 @@
 		</buildCommand>
 		<buildCommand>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<name>org.eclipse.m2e.core.maven2Builder</name>
+=======
+			<name>org.eclipse.wst.validation.validationbuilder</name>
+>>>>>>> master
 =======
 			<name>org.eclipse.wst.validation.validationbuilder</name>
 >>>>>>> master
@@ -26,7 +30,11 @@
 		</buildCommand>
 		<buildCommand>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<name>org.eclipse.wst.validation.validationbuilder</name>
+=======
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+>>>>>>> master
 =======
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 >>>>>>> master
