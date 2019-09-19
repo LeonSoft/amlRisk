@@ -1,7 +1,5 @@
-
 #top {
     position: relative;
-    background-color: #76C7C0;
     color: #F8FCFF;
     padding: 5px;
     margin: 30px 0px 10px 0px;
@@ -9,10 +7,16 @@
 
 #bottom {
     position: relative;
-    background-color: #6AB3AC;
-    padding: 5px;
+    padding: 15px;
     margin: 10px 0px 0px 0px;
     font-weight : bold;
+    font-size: 15px;
+    position: fixed;
+  	left: 0;
+  	bottom: 0;
+  	width: 100%;
+  	color: white;
+  	text-align: center;
 }
 
 #left {
@@ -28,11 +32,14 @@
 }
 
 .center_content {
-    position: relative;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 37%;
-    padding-right: 37%;
+	justify-content: center;
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
 }
 
 .left_content { 
@@ -58,12 +65,132 @@
   text-decoration : underline;
 }
 
-#frmAutenticacion{
-background-color: black; 
-}
-
 #cuadro{
     margin: 2px auto;
     width: 100px !important;
     text-align: center;   
+}
+
+.ui-panel{
+	border-radius: 9px;
+}
+
+#frmAutenticacion\:pnlAutenticacion {
+    width: 383px;
+    background: rgba(40,57,101,.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 55px;
+}
+#content{
+	display: flex;
+}
+#frmAutenticacion\:nombreUsuerio{
+	background-color: green;
+	width: 150%;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	background: rgba(255,255,255,.1);
+	margin-bottom: 5%;
+	color: whitesmoke;
+}
+
+#frmAutenticacion\:claveUsuario{
+		background-color: green;
+	width: 150%;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	background: rgba(255,255,255,.1);
+	margin-bottom: 10%;
+	color: whitesmoke;
+}
+
+.ui-button-text.ui-c{
+	background-color:#1161ee;
+	width: 456%;
+	color: #fff;
+	display: block;
+	border: none;
+	border-radius: 25px;
+	box-sizing: border-box;	
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	text-shadow: none;
+	border-radius: 40%;
+}
+.ui-button-text.ui-c{
+    padding: 1em !important;
+}
+
+#frmAutenticacion{
+  border-radius: 4%;
+background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+height: -moz-min-content;
+}
+
+element {
+}
+#frmAutenticacion\:nombreUsuerio {
+    background-color: green;
+    width: 150%;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+    margin-bottom: 5%;
+    color: whitesmoke;
+}
+.ui-widget-header .ui-inputfield, .ui-widget-content .ui-inputfield {
+    font-weight: normal;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    text-shadow: none;
+    border-radius: 40%;
+}
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+    -webkit-box-shadow: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: none;
+    background: none;
+}
+.containerAuth{
+	background: black;
+	/* 
+background: rgba(147,206,222,1);
+background: -moz-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+background: -webkit-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: linear-gradient(135deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+	 */
+}
+
+body{
+	background: rgba(147,206,222,1);
+background: -moz-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+background: -webkit-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: linear-gradient(135deg, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+}
+
+h1{
+	font-size: 25px;
+}
+#frmAutenticacion\:recordarClave{
+	color: #ddeaec;
 }
