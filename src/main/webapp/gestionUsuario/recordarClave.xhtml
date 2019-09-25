@@ -8,13 +8,14 @@
     
 
     <body>
-     
+    
+    	<h:outputStylesheet name="../css/styles.css" /> 
         <ui:composition template="../plantillas/plantillaSinMenu.xhtml">
 
-            <ui:define name="content" class="contentRecordarClave">                
+            <ui:define name="content" class="contentRecordarClave" id="content">                
                 <p:messages id="messages" showDetail="false" autoUpdate="true" />
                 <h:form id="frmAutenticacion">                                           
-                    <p:panel header="#{msj.recordarClave}" id="pnlRecordarClave" style="margin-bottom:20px; width: 200%; margin-left: -175px;">
+                    <p:panel id="pnlRecordarClave" >
                         <h:panelGrid id="pnlgRecordarClave" columns="2" width="100%" style="margin-left: 30%">
                             <p:outputLabel for="nombreUsuerio" value="#{msj.usuario}"  />
                             <p:inputText id="nombreUsuerio" required="true"  value="#{recordarClaveController.usuario.usuario}" tabindex="1"/>                       

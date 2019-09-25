@@ -21,8 +21,6 @@
 	                            <!-- <p:outputLabel for="claveUsuario" value="#{msj.clave}" /> -->
 	                            <p:password id="claveUsuario"  required="true" value="#{autenticacionController.usuario.claveUsuario}" tabindex="2"  placeholder="#{msj.clave}"/>                                                 
 	
-	
-	
 	                            <h:column/>    
 	                            <p:commandButton styleClass="ui-priority-primary" value="#{msj.ingresar}" action="#{autenticacionController.iniciaSesion()}" tabindex="3" update="frmAutenticacion" />
 	                        </h:panelGrid>
