@@ -129,7 +129,7 @@
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
 	text-shadow: none;
-	border-radius: 40%;
+	border-radius: 0px;
 }
 .ui-button-text.ui-c{
     padding: 1em !important;
@@ -139,4 +139,11 @@
   border-radius: 4%;
 background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
 height: -moz-min-content;
+}
+
+.ui-panel .ui-panel-content {
+    border: 0;
+    background: none;
+    padding: 0.5em 1em;
+    background-color: black;
 }
