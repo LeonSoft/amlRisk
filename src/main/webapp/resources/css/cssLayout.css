@@ -2,9 +2,11 @@
 #top {
     position: relative;
     background-color: #76C7C0;
-    color: #F8FCFF;
+    color: #564d4d;
     padding: 5px;
     margin: 30px 0px 10px 0px;
+    display: flex;
+	justify-content: center;
 }
 
 #bottom {
@@ -146,4 +148,86 @@ height: -moz-min-content;
     background: none;
     padding: 0.5em 1em;
     background-color: black;
+}
+
+body {
+    background-color: #564d4d;
+}
+
+
+#frmAdministrarUsuario\:btnGuardar{
+	background-color: transparent;
+border: none;
+}
+#frmAdministrarUsuario\:btnGuardar:hover{
+	background-color: black;
+border: none;
+}
+#frmAdministrarUsuario\:btnGuardar:active{
+	background-color: black;
+border: none;
+}
+
+#frmAdministrarUsuario\:btnGuardar:focus{
+	background-color: black;
+border: none;
+}
+
+#comCerrarSesion {
+    width: 50%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+}
+
+#comCerrarSesion:hover:active{
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+}
+
+#cerrarSesion {
+	width: 6%;
+}
+
+#tituloSistema {
+	margin-left: 29%;
+	margin-right: 17%;
+}
+
+#frmAutenticacion\:j_idt15:hover:active {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+}
+
+#frmAutenticacion\:j_idt15 {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+}
+
+#pnlBienvenida {
+    width: 99%;
+}
+.ui-widget-content {
+    background: #fffffa;
+}
+
+#frmMenuPrincipal\:j_idt12 {
+    border-radius: 6%;
+    border: 1px;
+    background: #fffffa;
+}
+
+.ui-menuitem-link.ui-submenu-link.ui-corner-all{
+    width: 100%;
 }
