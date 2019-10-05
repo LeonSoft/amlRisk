@@ -231,3 +231,12 @@ border: none;
 .ui-menuitem-link.ui-submenu-link.ui-corner-all{
     width: 100%;
 }
+
+.ui-widget.ui-menuitem.ui-corner-all.ui-menu-parent{
+	width: 90%;
+}
+
+.ui-menuitem-link.ui-corner-all:hover:active{
+	background: red;
+	width: 100%;
+}
