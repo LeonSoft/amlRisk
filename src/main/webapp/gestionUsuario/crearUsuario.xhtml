@@ -17,7 +17,7 @@
                 <h:form id="frmAdministrarUsuario" enctype="multipart/form-data">
                     <p:messages id="mensaje" autoUpdate="true" />
                     <h:panelGrid id="pnlgAdministrarUsuario" style="width:100%">
-                        <p:panel id="pnlAdministrarUsuario" header="#{msj.crearUsuario}">
+                        <p:panel id="pnlAdministrarUsuario"><h1 id="msjTitleCreateUser">#{msj.crearUsuario}</h1>
                             <h:panelGrid columns="4" style="width:100%" cellpadding="10px"> 
                                 
                                 <p:outputLabel for="idUsuario" value="#{msj.numIdCliente}"  />
