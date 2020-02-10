@@ -276,3 +276,23 @@ border: none;
 #frmCargaArchivo {
     width: 100%;
 }
+
+.ui-widget-header {
+    border: 1px solid #45c3be;
+    background: #f2f6fd -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
+    background: #c4c4c4 -moz-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0));
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+a:link:hover, a:visited:hover {
+    color: #045491;
+    font-size: 1.03em !important;
+    background: #f0f8ffb5 !important;
+    box-shadow: none !important;
+}
