@@ -12,7 +12,10 @@ import com.leonsoftware.amlgestionriesgo.model.Catalogo;
 import com.leonsoftware.amlgestionriesgo.model.CruceClienteLista;
 import com.leonsoftware.amlgestionriesgo.model.ListaRestriccion;
 import com.leonsoftware.amlgestionriesgo.util.ConstantesSisgri;
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
+
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -26,6 +29,8 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.persistence.StoredProcedureQuery;
 import javax.transaction.Transactional;
+
+import org.eclipse.persistence.exceptions.DatabaseException;
 
 
 
@@ -69,9 +74,13 @@ public class ArchivoFacade extends AbstractFacade<Catalogo> implements ArchivoFa
             this.borrarArchivoRestriccion(pArchivoFuente.getNombreFuente());
             this.em.persist(pArchivoFuente);            
             tx.commit();            
-        }catch(Exception e){
-            throw new SisgriException(e.getMessage());
-        }        
+        }catch(Exception e) {
+        	if ((e.getCause() instanceof DatabaseException) && (e.getCause().getCause() instanceof  com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException)){
+        		throw new SisgriException(e.getMessage(), "ERROR_SQL001");
+        	}else {
+        		throw new SisgriException(e.getMessage());
+        	}                       
+        }         
     }
      
     public void borrarArchivoRestriccion(String pNombreFuente) throws SisgriException{             

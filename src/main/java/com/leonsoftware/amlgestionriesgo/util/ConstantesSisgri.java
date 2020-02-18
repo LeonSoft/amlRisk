@@ -62,6 +62,9 @@ public class ConstantesSisgri {
 	
     public static final String LISTA_ID = "TIPO_ID";
     public static final String LISTA_TIPOUSUARIO = "TIPO_USUARIO";
+    
+    //Errores
+    public static final String ERROR_SQL001 = "errorRegistroDuplicado";
  
 
 }
