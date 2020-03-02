@@ -287,6 +287,7 @@ border: none;
     align-items: center;
     align-content: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 a:link:hover, a:visited:hover {
@@ -324,4 +325,55 @@ a:link, a:visited {
     color: #eaeaea;
     font-weight: bold;
     text-decoration: none;
+}
+
+#frmAutenticacion\:pnlRecordarClave {
+	background-color: rgba(40,57,101,.9);
+    margin-bottom: 0px !important;
+    width: 150% !important;
+    margin-left: 0px !important;
+
+}
+#frmAutenticacion\:nombreUsuario{
+	background-color: rgba(40,57,101,.9);
+	width: 100%;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	background: rgba(255,255,255,.1);
+	margin-bottom: 5%;
+	color: whitesmoke;
+}
+
+#frmAutenticacion\:pnlgRecordarClave {
+    margin-left: 0px !important;
+    width: 90%;
+}
+
+#frmAutenticacion\:j_idt17 {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+    margin-left: -4%;
+}
+
+#frmAutenticacion\:j_idt13 {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+    margin-bottom: 3%;
+}
+
+#frmAutenticacion\:pnlRecordarClave_header {
+    border: none;
+    box-shadow: none;
+    background: none;
+    color: 
+    white;
+    text-align: center;
+    font-size: large;
 }
