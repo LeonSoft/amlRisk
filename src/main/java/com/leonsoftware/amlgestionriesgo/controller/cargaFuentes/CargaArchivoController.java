@@ -1,24 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.leonsoftware.amlgestionriesgo.controller.cargaFuentes;
 
-import com.leonsoftware.amlgestionriesgo.ejb.ArchivoFacade;
-import com.leonsoftware.amlgestionriesgo.ejb.ArchivoFacadeLocal;
-import com.leonsoftware.amlgestionriesgo.ejb.CatalogoFacade;
-import com.leonsoftware.amlgestionriesgo.ejb.CatalogoFacadeLocal;
-import com.leonsoftware.amlgestionriesgo.exception.SisgriException;
-import com.leonsoftware.amlgestionriesgo.model.ArchivoFuente;
-import com.leonsoftware.amlgestionriesgo.model.ListaCatalogo;
-import com.leonsoftware.amlgestionriesgo.model.ListaIdRestriccion;
-import com.leonsoftware.amlgestionriesgo.model.ListaIdRestriccionPK;
-import com.leonsoftware.amlgestionriesgo.model.ListaRestriccion;
-import com.leonsoftware.amlgestionriesgo.model.ListaRestriccionPK;
-import com.leonsoftware.amlgestionriesgo.model.Usuario;
-import com.leonsoftware.amlgestionriesgo.util.ConstantesSisgri;
-import com.leonsoftware.amlgestionriesgo.util.UtilitarioLeonSoftware;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,6 +22,7 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -50,13 +32,13 @@ import javax.inject.Named;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
 import org.w3c.dom.Document;
@@ -64,6 +46,21 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import com.leonsoftware.amlgestionriesgo.ejb.ArchivoFacade;
+import com.leonsoftware.amlgestionriesgo.ejb.ArchivoFacadeLocal;
+import com.leonsoftware.amlgestionriesgo.ejb.CatalogoFacade;
+import com.leonsoftware.amlgestionriesgo.ejb.CatalogoFacadeLocal;
+import com.leonsoftware.amlgestionriesgo.exception.SisgriException;
+import com.leonsoftware.amlgestionriesgo.model.ArchivoFuente;
+import com.leonsoftware.amlgestionriesgo.model.ListaCatalogo;
+import com.leonsoftware.amlgestionriesgo.model.ListaIdRestriccion;
+import com.leonsoftware.amlgestionriesgo.model.ListaIdRestriccionPK;
+import com.leonsoftware.amlgestionriesgo.model.ListaRestriccion;
+import com.leonsoftware.amlgestionriesgo.model.ListaRestriccionPK;
+import com.leonsoftware.amlgestionriesgo.model.Usuario;
+import com.leonsoftware.amlgestionriesgo.util.ConstantesSisgri;
+import com.leonsoftware.amlgestionriesgo.util.UtilitarioLeonSoftware;
 
 /**
  *
@@ -89,7 +86,8 @@ public class CargaArchivoController implements Serializable{
     private Path rutaTemporal;
     private Path archivoTemporal;
     private Properties props; 
-
+    private Calendar fechaActual = Calendar.getInstance();   
+    
     
     /**
      * Constructor
@@ -105,6 +103,10 @@ public class CargaArchivoController implements Serializable{
         this.rutaTemporal = null;
         this.archivoTemporal = null;
         this.props = null;
+                       
+        this.fechaActual.get(Calendar.YEAR);
+        this.fechaActual.get(Calendar.MONTH);
+        this.fechaActual.get(Calendar.DAY_OF_MONTH); 
     }
 
     /**
@@ -242,7 +244,7 @@ public class CargaArchivoController implements Serializable{
      * 
      * @param fechaActual 
      */
-    private void recorrerArchivoFuenteONU(Calendar fechaActual){
+    private void recorrerArchivoFuenteONU(){
         LOGGER.info("LOGGER :: recorrerArchivoFuente :: recorrerArchivoFuenteONU");
         ListaRestriccion  listaRestriccion = null;
         List<ListaRestriccion> listaRestriccionCollection = new ArrayList<ListaRestriccion>();
@@ -313,7 +315,7 @@ public class CargaArchivoController implements Serializable{
      * 
      * @param fechaActual 
      */
-    private void recorrerArchivoExternoTexto(Calendar fechaActual){
+    private void recorrerArchivoExternoTexto(){
         LOGGER.info("LOGGER :: recorrerArchivoFuente :: recorrerArchivoExterno");
         ListaRestriccion  listaRestriccion = null;
         ListaIdRestriccion listaIdRestriccion = null;
@@ -382,11 +384,10 @@ public class CargaArchivoController implements Serializable{
     } 
     
     /**
-     * Metodo que permite recorrer el excel de la fuente externa
-     * 
-     * @param fechaActual 
+     * Permite recorrer un archivo excel sin problemas de memoria  con un máximo de 300 mil filas
      */
-    private void recorrerArchivoExternoExcel(Calendar fechaActual){   
+    
+    private void recorrerArchivoExternoExcel(){   
         LOGGER.info("LOGGER :: recorrerArchivoFuente :: recorrerArchivoExternoExcel");
         ListaRestriccion  listaRestriccion = null;
         ListaIdRestriccion listaIdRestriccion = null;
@@ -473,6 +474,7 @@ public class CargaArchivoController implements Serializable{
             this.archivoFuente.setListaRestriccionCollection(listaRestriccionCollection);
             this.archivoFuente.setIdArchivoFuente(idArchivo);
             entrada.close();
+            workbook.close();
         }catch (FileNotFoundException ex) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,this.archivoFuente.getNombreArchivoFuente() + this.mensajes.getString(ConstantesSisgri.MSJ_ERROR_CARGA), ex.getMessage()));            
             Logger.getLogger(CargaArchivoController.class.getName()).log(Level.SEVERE, null, ex);
@@ -486,7 +488,8 @@ public class CargaArchivoController implements Serializable{
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,this.archivoFuente.getNombreArchivoFuente() + this.mensajes.getString(ConstantesSisgri.MSJ_ERROR_CARGA), ex.getMessage()));            
             Logger.getLogger(CargaArchivoController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
+    }
+    
     
     
     /**
@@ -494,11 +497,11 @@ public class CargaArchivoController implements Serializable{
      * 
      * @param fechaActual 
      */
-    private void recorrerArchivoExterno(Calendar fechaActual){
+    private void recorrerArchivoExterno(){
         if(this.archivoFuente.getNombreArchivoFuente().contains(ConstantesSisgri.EXTENSION_EXCEL)){
-            this.recorrerArchivoExternoExcel(fechaActual); 
+			this.recorrerArchivoExternoExcel();	
         }else{
-            this.recorrerArchivoExternoTexto(fechaActual);
+            this.recorrerArchivoExternoTexto();
         }        
     }
     
@@ -508,10 +511,6 @@ public class CargaArchivoController implements Serializable{
      */
     public void procesarArchivo(){
         LOGGER.info("LOGGER :: CargaArchivoController :: procesarArchivo");  
-        Calendar fechaActual = Calendar.getInstance();                  
-        fechaActual.get(Calendar.YEAR);
-        fechaActual.get(Calendar.MONTH);
-        fechaActual.get(Calendar.DAY_OF_MONTH); 
         try{
             this.archivoFuente.setUsuario(this.usuario);
             this.archivoFuente.setFechaCarga(fechaActual.getTime());
@@ -522,16 +521,16 @@ public class CargaArchivoController implements Serializable{
             if(this.archivoFuente.getNombreFuente().equals(ConstantesSisgri.FUENTE_OFAC)){
                 this.recorrerArchivoFuenteOFAC(fechaActual);
             }else if(this.archivoFuente.getNombreFuente().equals(ConstantesSisgri.FUENTE_ONU)){
-                this.recorrerArchivoFuenteONU(fechaActual);
+                this.recorrerArchivoFuenteONU();
             }else{
-                this.recorrerArchivoExterno(fechaActual);
+                this.recorrerArchivoExterno();
             }
             this.EJBArchivo.guardarArchivo(this.archivoFuente);
             init();
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,this.mensajes.getString(ConstantesSisgri.MSJ_GUARDA_ARCHIVO_OK), null));
         }catch (SisgriException ex) {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,this.archivoFuente.getNombreArchivoFuente() + this.mensajes.getString(ConstantesSisgri.MSJ_ERROR_GUARDA_ARCHIVO), ex.getMessage()));
-            Logger.getLogger(CargaArchivoController.class.getName()).log(Level.SEVERE, null, ex);
+        	Logger.getLogger(CargaArchivoController.class.getName()).log(Level.SEVERE, null, ex);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,this.archivoFuente.getNombreArchivoFuente() + this.mensajes.getString(ConstantesSisgri.MSJ_ERROR_GUARDA_ARCHIVO) + (ex.getCodError() != null ? this.mensajes.getString(ConstantesSisgri.ERROR_SQL001) : ConstantesSisgri.ESPACIO_BLANCO), ex.getMessage()));            
             }
     }    
     
@@ -616,6 +615,14 @@ public class CargaArchivoController implements Serializable{
     public void setRutaTemporal(Path rutaTemporal) {
         this.rutaTemporal = rutaTemporal;
     }
+
+	public Calendar getFechaActual() {
+		return fechaActual;
+	}
+
+	public void setFechaActual(Calendar fechaActual) {
+		this.fechaActual = fechaActual;
+	}
 
     
     

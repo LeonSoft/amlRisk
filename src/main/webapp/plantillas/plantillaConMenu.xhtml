@@ -18,9 +18,12 @@
 
        <div id="top" align="center">
             <ui:insert name="top">
-                <h1>#{msj.tituloSistema}</h1> 
+            	<div id="tituloSistema">
+            		<h1>#{msj.tituloSistema}</h1> 
+            	</div>
+                
                 <div id="cerrarSesion" align="right">
-                    <p:commandButton actionListener="#{plantillaConMenuController.cerrarSesion}" value="#{msj.salir}" action="/autenticacion.xhtml"/>                        
+                    <p:commandButton id="comCerrarSesion" actionListener="#{plantillaConMenuController.cerrarSesion}" value="#{msj.salir}" action="/autenticacion.xhtml"/>                        
                 </div>    
             </ui:insert>           
         </div>
