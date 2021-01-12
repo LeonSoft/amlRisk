@@ -4,8 +4,7 @@
  */
 package com.leonsoftware.amlgestionriesgo.util;
 
-import com.leonsoftware.amlgestionriesgo.ejb.CatalogoFacade;
-import com.leonsoftware.amlgestionriesgo.ejb.CatalogoFacadeLocal;
+
 import com.leonsoftware.amlgestionriesgo.exception.SisgriException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,12 +26,9 @@ import javax.mail.internet.MimeMessage;
  * Clase de métodos utilitarios
  * @since 02/10/2017
  * @author Carolina Colorado
- * @version 1.0
+ * @version 1.1
  */
 public class UtilitarioLeonSoftware {
-    
-    
-    private final CatalogoFacadeLocal EJBcatalogo = new CatalogoFacade();
 
     public UtilitarioLeonSoftware() {
   
