@@ -10,7 +10,7 @@
         <ui:composition template="./plantillas/plantillaSinMenu.xhtml">
 
             <ui:define name="content" id="content">                
-                <p:messages id="messages" showDetail="false" autoUpdate="true" />
+<!--                 <p:messages id="messages" showDetail="false" autoUpdate="true" /> -->
                 <h:form id="frmAutenticacion">                                           
                     <p:panel id="pnlAutenticacion">
                         <h:panelGrid id="pnlgAutenticacion" columns="2" >
@@ -24,9 +24,11 @@
 
                             <h:column/>    
                             <p:commandButton styleClass="ui-priority-primary" value="#{msj.ingresar}" action="#{autenticacionController.iniciaSesion()}" tabindex="3" update="frmAutenticacion" />
+                        
                         </h:panelGrid>
                         <p:separator/>
                         <p:commandLink id="recordarClave" tabindex="4" value="#{msj.recordarClave}" action="gestionUsuario/recordarClave.xhtml" process="@this" />                                
+                    <p:messages id="messages" showDetail="false" autoUpdate="true" />
                     </p:panel>        
                 </h:form>  
             </ui:define>
