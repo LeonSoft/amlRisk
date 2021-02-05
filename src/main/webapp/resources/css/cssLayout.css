@@ -7,8 +7,8 @@
 
 #top {
     position: relative;
-    background-color: #52545b;
-    color: #e8f0fe;
+    background-color: whitesmoke;
+    color: #422E28;
     padding: 5px;
     margin: 30px 0px 10px 0px;
     display: flex;
@@ -22,7 +22,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #52545b;
+    background-color: #271B16;
     color: white;
     text-align: center;
     height: 2em;
@@ -44,16 +44,19 @@
     width: 300px;
 }
 
+/* Centra el contenido del login */
 .center_content {
-	justify-content: center;
-    position: absolute;
-    top: 36%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 100px;
-    height: 100px;
-}
+	padding-top: 11%;
+	}
+/* 	justify-content: center; */
+/*     position: absolute; */
+/*     top: 36%; */
+/*     left: 50%; */
+/*     margin-top: -50px; */
+/*     margin-left: -50px; */
+/*     width: 100px; */
+/*     height: 100px; */
+/* } */
 
 .left_content { 
     position: relative;
@@ -90,7 +93,8 @@
 }
 
 #frmAutenticacion\:pnlAutenticacion {
-    background: rgba(40,57,101,.9);
+/*     background: rgba(40,57,101,.9); this is blue background to login*/
+	background: #271B16;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
@@ -99,14 +103,17 @@
     -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
     padding: 5%;
-    width: 70%;
 }
+
+#frmAutenticacion\:messages {
+    width: 20em;
+}
+
 #content{
 	display: flex;
 }
 #frmAutenticacion\:nombreUsuerio{
-	background-color: green;
-	width: 100%;
+	width: 20em;
 	border: none;
 /* 	padding: 15px 20px; */
 	border-radius: 25px;
@@ -116,18 +123,29 @@
 }
 
 #frmAutenticacion\:pnlgAutenticacion {
-    width: 100%;
+    display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	height: 16em;
 }
 
 #frmAutenticacion\:claveUsuario{
 	background-color: green;
-	width: 100%;
+	width: 20em;
 	border: none;
 /* 	padding: 15px 20px; */
 	border-radius: 25px;
 	background: rgba(255,255,255,.1);
 	margin-bottom: 10%;
 	color: whitesmoke;
+}
+
+#frmAutenticacion\:recordarClave {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #eaeaea;
 }
 
 .ui-button-text.ui-c{
@@ -145,22 +163,26 @@
 	text-shadow: none;
 	border-radius: 11px;
 	border: none !important;
-	/* background: none; */
+	background: transparent;
+	width: 20em;
+}
+
+#frmAutenticacion\:j_idt16 {
+    margin-top: 1em;
 }
 
 #frmAutenticacion{
   	border-radius: 4%;
-	padding-top: 186%;
-<<<<<<< HEAD
+/* 	padding-top: 186%; */
 	display: flex;
 	align-content: center;
 	justify-content: center;
-	width: 500px;
+	width: 42em;
+/* 	flex-basis: 25em; */
 }
 #frmAutenticacion:j_idt16 {
     background: none !important;
-=======
->>>>>>> 66251d9e3abbcc63c9de346561277c0a5bbde08e
+
 }
 
 .ui-panel .ui-panel-content {
@@ -297,6 +319,7 @@ border: none;
     align-content: center;
     justify-content: center;
     flex-direction: column;
+    
 }
 /* #frmAutenticacion:j_idt16{ 
 	background: black;
@@ -515,7 +538,8 @@ a#frmAutenticacion:recordarClave a {
 }
 
 a:link, a:visited {
-    color: #eaeaea;
+/*     color: #eaeaea; */
+    color: #422E28;
     font-weight: bold;
     text-decoration: none;
 }
