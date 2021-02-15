@@ -127,14 +127,21 @@ public class GestionUsuarioController implements Serializable{
      */    
     public void recordarClave(){
         try {
-            UtilitarioLeonSoftware utilitario = new UtilitarioLeonSoftware();
-            this.recuperarUsuario();
-            StringBuffer sb = new StringBuffer(this.usuarioRecuperado.getCorreoUsuario());
-            sb.replace(ConstantesSisgri.INDICE_INICIAL, ConstantesSisgri.INDICE_FINAL, "****");
-            this.correoEncriptado = sb;
-            utilitario.enviarCorreo(this.usuarioRecuperado.getCorreoUsuario(), this.mensajes.getString(ConstantesSisgri.CORREO_MAILMENSAJE).concat(this.usuarioRecuperado.getClaveUsuario()));
+        	if (this.usuarioRecuperado != null) {
+                UtilitarioLeonSoftware utilitario = new UtilitarioLeonSoftware();
+                this.recuperarUsuario();
+                StringBuffer sb = new StringBuffer(this.usuarioRecuperado.getCorreoUsuario());
+                sb.replace(ConstantesSisgri.INDICE_INICIAL, ConstantesSisgri.INDICE_FINAL, "****");
+                this.correoEncriptado = sb;
+                utilitario.enviarCorreo(this.usuarioRecuperado.getCorreoUsuario(), this.mensajes.getString(ConstantesSisgri.CORREO_MAILMENSAJE).concat(this.usuarioRecuperado.getClaveUsuario()));
+                throw new SisgriException("El correo será enviado a: " + this.correoEncriptado );//revisar
+            }else{
+                throw new SisgriException("El usuario ingresado no existe,verifique por favor"); 
+            }
         } catch (SisgriException ex) {
-            Logger.getLogger(GestionUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+        	System.out.println("usuario recordarClave");
+//  Revisar          Logger.getLogger(GestionUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, ex.getMessage(), ex.getMessage()));
         }
     }
     

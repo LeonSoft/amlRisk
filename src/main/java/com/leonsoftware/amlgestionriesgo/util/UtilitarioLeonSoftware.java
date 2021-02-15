@@ -21,6 +21,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.primefaces.expression.impl.ThisExpressionResolver;
+
 
 /**
  * Clase de métodos utilitarios
@@ -87,6 +89,7 @@ public class UtilitarioLeonSoftware {
             Message msg = new MimeMessage(mailSession);
             msg.setFrom(new InternetAddress(props.getProperty(ConstantesSisgri.CORREO_MAILCORREO)));
             InternetAddress[] address = {new InternetAddress(pCorreo)};//este se debe cambiar por this.correoUsuario se uso uno prueba
+            System.out.println(pCorreo);
             msg.setRecipients(Message.RecipientType.TO, address);
             msg.setSubject(props.getProperty(ConstantesSisgri.CORREO_MAILDESDE));
             msg.setSentDate(new Date());

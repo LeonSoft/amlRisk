@@ -164,7 +164,12 @@
 	border-radius: 11px;
 	border: none !important;
 	background: transparent;
-	width: 20em;
+	width: 10em;
+	padding: 0.1em;
+}
+
+.recordarClaveBotones {
+    width: 20em !important;
 }
 
 #frmAutenticacion\:j_idt16 {
@@ -426,7 +431,7 @@ center {
 #frmAutenticacion\:j_idt17 {
     display: flex;
     flex-basis: 25px;
-    width: 20%;
+/*     width: 20%; */
     border: none;
     margin: 0;
     padding: 0;
@@ -435,7 +440,7 @@ center {
 }
 
 #frmAutenticacion\:pnlRecordarClave {
-	background-color: rgba(40,57,101,.9);
+	background-color: #271B16;
     margin-bottom: 0px !important;
     width: 70% !important;
     margin-left: 0px !important;
@@ -473,8 +478,9 @@ center {
 
 /* Pagina de bienvenida */
 div#pnlBienvenida_content {
-    background-color: #56617d;
-       color: #dbe4e8;
+/*     background-color: #56617d; */
+	background-color: #51352A;  
+    color: #dbe4e8;
 }
 a#frmAutenticacion:recordarClave a:link:hover, a:visited:hover{
     color: whitesmoke;
