@@ -3,7 +3,7 @@
   <persistence-unit name="sisgriPU" transaction-type="RESOURCE_LOCAL">
       
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <!-- <jta-data-source>java:jdbc/sisgriBD</jta-data-source> -->
+    <jta-data-source>java:jdbc/sisgriBD</jta-data-source>
     
     <class>com.leonsoftware.amlgestionriesgo.model.CruceClienteLista</class>
     <class>com.leonsoftware.amlgestionriesgo.model.Usuario</class>
@@ -17,11 +17,5 @@
     <class>com.leonsoftware.amlgestionriesgo.model.ListaIdRestriccion</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
-    <properties>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bd_sisgri"/>
-      <property name="javax.persistence.jdbc.user" value="usuSisgri"/>
-      <property name="javax.persistence.jdbc.password" value="Sisgri12345"/>
-    </properties>
   </persistence-unit>
 </persistence>
