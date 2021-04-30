@@ -72,7 +72,7 @@ public class ClienteMasivoPK implements Serializable {
         int hash = 0;
         hash += (tipoIdCliente != null ? tipoIdCliente.hashCode() : 0);
         hash += (idCliente != null ? idCliente.hashCode() : 0);
-        hash += (int) idArchivoCliMasivo;
+        hash += idArchivoCliMasivo;
         return hash;
     }
 

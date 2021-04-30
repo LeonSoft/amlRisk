@@ -8,7 +8,7 @@
 
     <body>
 
-        <ui:composition template="./../plantillas/plantillaConMenu.xhtml">
+        <ui:composition template="/WEB-INF/plantillas/plantillaConMenu.xhtml">
             <ui:define name="content">
                 
                 <f:event type="preRenderView" listener="#{consultaListaMasivoController.consultaArchivoMasivo()}"/>
@@ -31,9 +31,9 @@
                                 </p:column>
 
                                 <p:column headerText="#{msj.accion}" >                                    
-                                    <p:commandButton id="btnProceso"  value="#{msj.cruzar}" actionListener="#{consultaListaMasivoController.cruzarArchivoCliente(archivoClienteResultado)}" />                                      
+                                    <p:commandButton icon="pi pi-filter" id="btnProceso"  value="#{msj.cruzar}" actionListener="#{consultaListaMasivoController.cruzarArchivoCliente(archivoClienteResultado)}" />                                      
                                    <p:spacer width="20"/>
-                                    <p:commandButton id="btnDescarga" update=":frmConsultaMasivoLista:pnlResultadoCruce" actionListener="#{consultaListaMasivoController.consultarCruceClienteLista(archivoClienteResultado)}" oncomplete="PF('clienteCruce').show()" icon="ui-icon-search" title="#{msj.resultadoCruce}" />                                     
+                                    <p:commandButton  icon="pi pi-search" id="btnDescarga" value="#{msj.detalle}" update=":frmConsultaMasivoLista:pnlResultadoCruce" actionListener="#{consultaListaMasivoController.consultarCruceClienteLista(archivoClienteResultado)}" oncomplete="PF('clienteCruce').show()"  title="#{msj.resultadoCruce}" />                                     
                                     <p:blockUI block=":frmConsultaMasivoLista:pnlgConsultaMasivoLista" trigger="btnProceso">
                                        #{msj.procesando}<br/>
                                        <p:graphicImage name="demo/images/ajaxloadingbar.gif"/>
@@ -42,8 +42,8 @@
                             </p:dataTable>    
                             
                             
-                            <p:dialog header="#{msj.resultadoCruce}" widgetVar="clienteCruce" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-                                <p:outputPanel id="pnlResultadoCruce" style="text-align:center;">
+                            <p:dialog header="#{msj.resultadoCruce}" widgetVar="clienteCruce" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="1000px" height="400px" fixedCenter="true">
+                                <p:outputPanel id="pnlResultadoCruce" style="text-align:center;" >
 
                                         <p:dataTable  id="dtClienteCoincide" var="clienteCruce" value="#{consultaListaMasivoController.listaCruceClienteLista}" paginator="true" rows="10" styleClass="paginated" emptyMessage="#{msj.mensajeNoEncontro}" paginatorPosition="bottom">
 

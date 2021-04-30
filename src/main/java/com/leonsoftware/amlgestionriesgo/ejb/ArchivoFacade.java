@@ -12,10 +12,7 @@ import com.leonsoftware.amlgestionriesgo.model.Catalogo;
 import com.leonsoftware.amlgestionriesgo.model.CruceClienteLista;
 import com.leonsoftware.amlgestionriesgo.model.ListaRestriccion;
 import com.leonsoftware.amlgestionriesgo.util.ConstantesSisgri;
-import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
-
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;

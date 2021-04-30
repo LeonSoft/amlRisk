@@ -57,7 +57,7 @@ public class UsuarioPK implements Serializable {
     public int hashCode() {
         int hash = 0;
         hash += (tipoIdUsuario != null ? tipoIdUsuario.hashCode() : 0);
-        hash += (int) idUsuario;
+        hash += idUsuario;
         return hash;
     }
 

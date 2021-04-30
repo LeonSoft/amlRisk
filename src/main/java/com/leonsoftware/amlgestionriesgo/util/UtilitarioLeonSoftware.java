@@ -21,8 +21,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import org.primefaces.expression.impl.ThisExpressionResolver;
-
 
 /**
  * Clase de métodos utilitarios

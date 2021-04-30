@@ -55,7 +55,7 @@ public class ListaRestriccionPK implements Serializable {
     public int hashCode() {
         int hash = 0;
         hash += (int) listaIdRegistro;
-        hash += (int) tbArchivoFuenteIdArchivoFuente;
+        hash += tbArchivoFuenteIdArchivoFuente;
         return hash;
     }
 

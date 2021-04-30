@@ -97,7 +97,7 @@ public class ConsultaListaController implements Serializable{
         Double porcPorPalabra = (ConstantesSisgri.PORCENTAJE_CIEN / parametros.length);
         Double porcentanjeAux;
         try {
-            List<ListaRestriccion> listaClienteCoincideAux = (List<ListaRestriccion>) this.EJBArchivo.buscarListaCoincidencia(parametros, this.numeroID.trim());            
+            List<ListaRestriccion> listaClienteCoincideAux = this.EJBArchivo.buscarListaCoincidencia(parametros, this.numeroID.trim());            
             for(ListaRestriccion  listaRestriccion : listaClienteCoincideAux){
                 porcentanjeAux = new Double(0);                
                 for(String parametro : parametros){

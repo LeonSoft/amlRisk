@@ -8,25 +8,32 @@
 
     <h:head>        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet name="/css/default.css"/>
-        <h:outputStylesheet name="/css/cssLayout.css"/>
         <title>#{msj.tituloSisgri}</title>
         <f:event type="preRenderView" listener="#{plantillaConMenuController.verificaSesion()}"/>
     </h:head>
 
     <h:body>
 
-       <div id="top" align="center">
+<!--      <div id="top" align="center">
             <ui:insert name="top">
             	<div id="tituloSistema">
             		<h1>#{msj.tituloSistema}</h1> 
             	</div>
                 
                 <div id="cerrarSesion" align="right">
-                    <p:commandButton id="comCerrarSesion" actionListener="#{plantillaConMenuController.cerrarSesion}" value="#{msj.salir}" action="/autenticacion.xhtml"/>                        
+                    <p:commandButton id="comCerrarSesion" actionListener="#{plantillaConMenuController.cerrarSesion}" value="#{msj.salir}" action="./autenticacion.xhtml"/>                        
                 </div>    
             </ui:insert>           
-        </div>
+        </div>-->
+      
+      	<div align="center">
+		    <f:facet name="header">
+
+			     <div id="cerrarSesion" align="right">
+                    <p:commandButton id="comCerrarSesion" actionListener="#{plantillaConMenuController.cerrarSesion}" value="#{msj.salir}" action="./autenticacion.xhtml"/>                        
+                </div>    
+		    </f:facet>   
+		</div>	
         
         <div>
             <div id="left">                
@@ -43,9 +50,10 @@
         <br/>
         <br/>
         <br/>
-        <div id="bottom" align="center" >
-            <ui:insert name="bottom">#{msj.piePagina}</ui:insert>
-        </div>
+	    <f:facet name="footer">
+	         <img alt="#{msj.piePagina}" src="./resources/imagenes/logoLeonSoftware.png" style="width: 2em"  />
+	         <ui:insert name="bottom">#{msj.piePagina}</ui:insert>
+	    </f:facet>
 
     </h:body>
 

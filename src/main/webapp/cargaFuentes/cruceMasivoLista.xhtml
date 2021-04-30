@@ -8,24 +8,20 @@
 
     <body>
 
-        <ui:composition template="./../plantillas/plantillaConMenu.xhtml">
+        <ui:composition template="/WEB-INF/plantillas/plantillaConMenu.xhtml">
 
             <ui:define name="content">
                 <p:messages id="messages" showDetail="false" autoUpdate="true" />
                 <h:form id="frmCruceMasivoLista" enctype="multipart/form-data">
                     <h:panelGrid id="pnlgCruceMasivoLista" style="width:100%">
                         <p:panel header="#{msj.subMnuCargaLista}" id="pnlCruceMasivoLista">
-                            <p:panel id="pnlgCargaMasivoLista" >
                                 <p:growl id="messages" showDetail="true" />                           
                                 <p:fileUpload required="true" multiple="false" allowTypes="/(\.|\/)(txt|xls|xlsx)$/" label="#{msj.cargaArchivo}" cancelLabel="#{msj.cancelar}" uploadLabel="#{msj.carga}" fileUploadListener="#{cargaArchivoClienteController.cargarArchivoClienteListener}" update="btnCargandoArchivo"/>    
                                 <br/>
-                                <br/>                     
-                            </p:panel>    
-                            <br/>
-                            <br/> 
+                                <br/>                         
                             <f:facet name="footer" >
                                 <center>
-                                    <p:commandButton id="btnCargandoArchivo" value="#{msj.procesar}" tabindex="3" actionListener="#{cargaArchivoClienteController.procesarArchivoMasivo}" ajax="false" disabled="#{cargaArchivoClienteController.ocultarBoton}"/>    
+                                    <p:commandButton icon="pi pi-cloud-upload" id="btnCargandoArchivo" value="#{msj.procesar}" tabindex="3" actionListener="#{cargaArchivoClienteController.procesarArchivoMasivo}" ajax="false" disabled="#{cargaArchivoClienteController.ocultarBoton}"/>    
                                 </center>
                             </f:facet>    
                         </p:panel>    

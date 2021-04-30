@@ -9,6 +9,7 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>#{msj.tituloSisgri}</title>
+        <h:outputStylesheet name="././css/primeflex/primeflex.css"/>
     </h:head>
 
     <h:body>
@@ -24,16 +25,16 @@
         <div id="bottom" align="center">
             <ui:insert name="bottom">#{msj.piePagina}</ui:insert>
         </div> -->
-		<div align="center">
-		<p:panel style="width: 25rem">
+		<div align="center" class="demo-container p-p-6">
+		<p:panel style="width: 23rem">
 		    <f:facet name="header">
-		    <div id="top">
-		        <img  src="./resources/imagenes/seguridad.png" style="width: 22rem"/>
+		    	<div id="top">
+		        	<img  src="./resources/imagenes/seguridad.png" style="width: 22rem"/>
 		        	<p>#{msj.tituloSistema}</p>
-		        </div>	
+		      </div>	
 		    </f:facet>
 			<div id="content">
-			    <ui:insert name="content" >Content</ui:insert>
+			    <ui:insert name="content">Content</ui:insert>
 			</div>      
 		</p:panel>
 	</div>	

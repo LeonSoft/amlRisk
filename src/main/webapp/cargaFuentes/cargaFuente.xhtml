@@ -8,7 +8,7 @@
 
     <body>
        
-        <ui:composition template="./../plantillas/plantillaConMenu.xhtml">
+        <ui:composition template="/WEB-INF/plantillas/plantillaConMenu.xhtml">
             <ui:define name="content" >
                 
                 <f:event type="preRenderView" listener="#{cargaArchivoController.iniciarListas()}"/>
@@ -16,8 +16,8 @@
                 <h:form id="frmCargaArchivo" enctype="multipart/form-data"> 
                     <h:panelGrid id="pnlgCargaFuente" style="width:100%">                                                                               
                         <p:panel  id="pnlCargaFuente"  header="#{msj.mnuCargaFuente}">
-                            <p:growl id="messages" showDetail="true" />                           
-                            <p:fileUpload id="btnValidaArchivo" required="true" multiple="false" allowTypes="/(\.|\/)(txt|xml|xls|xlsx)$/" label="#{msj.cargaArchivo}" cancelLabel="#{msj.cancelar}" uploadLabel="#{msj.carga}" fileUploadListener="#{cargaArchivoController.cargarArchivoListener}" update="btnCargandoArchivo" />                                 
+                            <p:growl id="messagesGr" showDetail="true" />                           
+                            <p:fileUpload id="btnValidaArchivo" required="true" mode="advanced" multiple="false" allowTypes="/(\.|\/)(txt|xml|xls|xlsx)$/" label="#{msj.cargaArchivo}" cancelLabel="#{msj.cancelar}" uploadLabel="#{msj.carga}" fileUploadListener="#{cargaArchivoController.cargarArchivoListener}" update="messages,:frmCargaArchivo:btnCargandoArchivo" />                                 
                             <br/>
                             <br/>                            
                             <h:panelGrid id="pnlgAccion" style="width:100%" >
@@ -39,7 +39,7 @@
                                                  
                             <f:facet name="footer" >
                                 <center>
-                                    <p:commandButton id="btnCargandoArchivo" value="#{msj.procesar}" tabindex="3" actionListener="#{cargaArchivoController.procesarArchivo}" ajax="false" disabled="#{cargaArchivoController.ocultarBoton}"/>                                                                           
+                                    <p:commandButton icon="pi pi-cloud-upload" id="btnCargandoArchivo" value="#{msj.procesar}" tabindex="3" actionListener="#{cargaArchivoController.procesarArchivo}" ajax="false" disabled="#{cargaArchivoController.ocultarBoton}"/>                                                                           
                                     <p:blockUI block=":frmCargaArchivo:pnlgCargaFuente" trigger="btnCargandoArchivo">
                                         #{msj.buscandoCoincidencias}<br/>
                                         <p:graphicImage name="demo/images/ajaxloadingbar.gif"/>

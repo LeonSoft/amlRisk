@@ -1,5 +1,6 @@
 package com.leonsoftware.amlgestionriesgo.ejb;
 
+
 import com.leonsoftware.amlgestionriesgo.exception.SisgriException;
 import com.leonsoftware.amlgestionriesgo.model.Menu;
 import java.util.List;

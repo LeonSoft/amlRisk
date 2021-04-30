@@ -69,7 +69,7 @@ public class ListaIdRestriccionPK implements Serializable {
         int hash = 0;
         hash += (int) listaIdRestriccionId;
         hash += (int) tbListaRestriccionListaIdRegistro;
-        hash += (int) tbArchivoFuenteIdArchivoFuente;
+        hash += tbArchivoFuenteIdArchivoFuente;
         return hash;
     }
 

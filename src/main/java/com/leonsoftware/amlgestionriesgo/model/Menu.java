@@ -48,7 +48,7 @@ public class Menu implements Serializable {
     @Size(max = 50)
     @Column(name = "nombre_menu")
     private String nombreMenu;
-    @Size(max = 45)
+    @Size(max = 100)
     @Column(name = "url_menu")
     private String urlMenu;
     @Size(max = 5)

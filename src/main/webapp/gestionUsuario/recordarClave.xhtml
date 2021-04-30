@@ -9,29 +9,26 @@
 
     <body>
      
-        <ui:composition template="../plantillas/plantillaSinMenu.xhtml">
+        <ui:composition template="/WEB-INF/plantillas/plantillaSinMenu.xhtml">
 
             <ui:define name="content" class="contentRecordarClave">                
-               
+               	
                 <h:form id="frmAutenticacion">                                           
-                    <p:panel header="#{msj.tituloRecordarClave}" id="pnlRecordarClave" style="margin-bottom:20px; width: 200%; margin-left: -175px;">
-                        <h:panelGrid id="pnlgRecordarClave" columns="1" width="100%" style="margin-left: 30%">
-                            <!-- <p:outputLabel for="nombreUsuerio" value="#{msj.usuario}"  /> -->
-                            <p:inputText id="nombreUsuario" required="true"  value="#{gestionUsuarioController.usuario.usuario}" tabindex="1"/>                       
-                            <h:column/>    
-                            <br/>
-                            <br/>
-                        </h:panelGrid>
-                        <center>
-                            <p:commandButton class="recordarClaveBotones" value="#{msj.recordarEnviar}" action="#{gestionUsuarioController.recordarClave()}" tabindex="2" update="@form" />
-                            <p:spacer width="20" />
-                            <p:commandButton class="recordarClaveBotones" value="#{msj.inicio}" action="/autenticacion.xhtml" tabindex="3" process="@this"/>
-                        </center>
+                    <h:panelGrid id="pnlgRecordarClave" columns="2">
+                        <p:outputLabel for="nombreUsuario" value="#{msj.usuario}"  />
+                        <p:inputText id="nombreUsuario" required="true"  value="#{gestionUsuarioController.usuario.usuario}" tabindex="1"/>                       
+                        <h:column/>    
                         <br/>
-                        <p:separator/>
-                        <h:outputLabel class="labelWhite" value="#{msj.laClavesera} #{gestionUsuarioController.correoEncriptado}"/>
-                         <p:messages id="messages" showDetail="false" autoUpdate="true" />
-                    </p:panel>        
+                        <br/>
+                    </h:panelGrid>
+                    <center>
+                        <p:commandButton icon="pi pi-check" class="recordarClaveBotones" value="#{msj.recordarEnviar}" action="#{gestionUsuarioController.recordarClave()}" tabindex="2" update="@form" />
+                        <p:commandButton icon="pi pi-home" class="recordarClaveBotones" value="#{msj.inicio}" action="/autenticacion.xhtml" tabindex="3" process="@this"/>
+                    </center>
+                    <br/>
+                    <p:separator/>
+                    <h:outputLabel class="labelWhite" value="#{msj.laClavesera} #{gestionUsuarioController.correoEncriptado}"/>
+                     <p:messages id="messages" showDetail="false" autoUpdate="true" />    
                 </h:form>  
             </ui:define>
 

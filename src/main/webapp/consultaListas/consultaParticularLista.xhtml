@@ -6,16 +6,17 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
 
+	<h:outputStylesheet name="./resources/css/primeflex.min.css" />
     <body>
 
-        <ui:composition template="./../plantillas/plantillaConMenu.xhtml">
+        <ui:composition template="/WEB-INF/plantillas/plantillaConMenu.xhtml">
             <ui:define name="content" >
                 
                 <f:event type="preRenderView" listener="#{consultaListaController.iniciarListas()}"/>
                 <h:form id="frmConsultaLista" enctype="multipart/form-data">
-                    <h:panelGrid id="pnlgConsultaLista" style="width:100%">  
+                    <h:panelGrid id="pnlgConsultaLista" layout="flex" styleClass="showcase-text-align-center">  
                         <p:panel id="pnlConsultaLista" header="#{msj.mnuConsultaLista}" >  
-                            <h:panelGrid columns="4" style="width:100%" cellpadding="10px">                          
+                            <h:panelGrid columns="4" cellpadding="10px">                          
  
                                 <p:outputLabel for="nombreApCliente" value="#{msj.nombreCliente}"  />
                                 <p:inputText id="nombreApCliente" value="#{consultaListaController.nombreApCliente}" tabindex="1" maxlength="40" size="40"/>                                
@@ -33,13 +34,13 @@
                             <br/>
                             <br/>
                             <center>  
-                                <p:commandButton id="btnBuscar" value="#{msj.buscar}"  update="frmConsultaLista" action="#{consultaListaController.buscarCoincidencia()}" tabindex="4"/>
+                                <p:commandButton icon="pi pi-search" id="btnBuscar" value="#{msj.buscar}"  update="frmConsultaLista" action="#{consultaListaController.buscarCoincidencia()}" tabindex="4"/>
                                 <p:blockUI block=":frmConsultaLista:pnlConsultaLista" trigger="btnBuscar">
                                     #{msj.buscandoCoincidencias}<br/>
                                      <p:graphicImage name="demo/images/ajaxloadingbar.gif"/>
                                 </p:blockUI>
                                 <p:spacer width="20" />
-                                <p:commandButton id="btnLimpiar" value="#{msj.limpiar}"  update="frmConsultaLista" action="#{consultaListaController.limpiarFormulario()}" tabindex="5"/>
+                                <p:commandButton icon="pi pi-replay" id="btnLimpiar" value="#{msj.limpiar}"  update="frmConsultaLista" action="#{consultaListaController.limpiarFormulario()}" tabindex="5" />
                             </center>    
                             <br/>
                             <br/>                                           
@@ -67,7 +68,7 @@
                                     </p:column>
 
                                 </p:dataTable> 
-                                <f:facet name="footer" >
+                                <f:facet name="footer1" >
                                     <center>
                                         <h:commandLink value="#{msj.descarga}">                                         
                                             <p:dataExporter type="csv" target="dtClienteCoincide" fileName="#{msj.descarga}" />

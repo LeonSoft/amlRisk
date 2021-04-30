@@ -6,19 +6,16 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
     
-    <head>
-        <link href="../resources/css/styles.css" rel="stylesheet" type="text/css"/>
-</head>
     <body>
 
-        <ui:composition template="./../plantillas/plantillaConMenu.xhtml">
+        <ui:composition template="/WEB-INF/plantillas/plantillaConMenu.xhtml">
             <ui:define name="content">
                 <f:event type="preRenderView" listener="#{gestionUsuarioController.iniciarListas()}"/>
                 <h:form id="frmAdministrarUsuario" enctype="multipart/form-data">
                     <p:messages id="mensaje" autoUpdate="true" />
                     <h:panelGrid id="pnlgAdministrarUsuario" style="width:100%">
-                        <p:panel id="pnlAdministrarUsuario"><h1 id="msjTitleCreateUser">#{msj.crearUsuario}</h1>
-                            <h:panelGrid columns="4" style="width:100%" cellpadding="10px"> 
+                        <p:panel id="pnlAdministrarUsuario"  header="#{msj.crearUsuario}">
+                            <h:panelGrid columns="4" style="width:100%" cellpadding="10px" > 
                                 
                                 <p:outputLabel for="idUsuario" value="#{msj.numIdCliente}"  />
                                 <p:inputText id="idUsuario" placeholder="#{msj.numIdCliente}" value="#{gestionUsuarioController.usuario.usuarioPK.idUsuario}" tabindex="1" required="true" maxlength="40" size="40"/>                                
@@ -58,7 +55,7 @@
 
                             <f:facet name="footer" >
                                  <center>
-                                     <p:commandButton id="btnGuardar" value="#{msj.guardar}" tabindex="10" actionListener="#{gestionUsuarioController.guardarUsuario()}" update="frmAdministrarUsuario"/>                                                                           
+                                     <p:commandButton icon="pi pi-save" id="btnGuardar" value="#{msj.guardar}" tabindex="10" actionListener="#{gestionUsuarioController.guardarUsuario()}" update="frmAdministrarUsuario"/>                                                                           
                                     <p:blockUI block=":frmAdministrarUsuario:pnlAdministrarUsuario" trigger="btnGuardar" >
                                         #{msj.procesando}<br/>
                                         <p:graphicImage name="demo/images/ajaxloadingbar.gif"/>

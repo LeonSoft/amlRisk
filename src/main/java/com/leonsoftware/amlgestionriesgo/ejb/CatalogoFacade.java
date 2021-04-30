@@ -48,7 +48,7 @@ public class CatalogoFacade extends AbstractFacade<Catalogo> implements Catalogo
         Catalogo catalogo = null; 
         List<ListaCatalogo> listaCatalogo = null;        
         try{   
-            Query q = (TypedQuery<Catalogo>) getEntityManager().createNamedQuery("Catalogo.findByIdCatalogo").setParameter("idCatalogo", pNombreCatalogo.trim());           
+            Query q = getEntityManager().createNamedQuery("Catalogo.findByIdCatalogo").setParameter("idCatalogo", pNombreCatalogo.trim());           
             catalogo = (Catalogo) q.getSingleResult();                
             if(catalogo != null){
                 listaCatalogo = (List<ListaCatalogo>) catalogo.getListaCatalogoCollection();
